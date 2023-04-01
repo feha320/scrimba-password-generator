@@ -10,23 +10,31 @@
   <body>
     <div id="container-main">
       <div id="header">
-        <h1 id="title-big">Erzeuge ein <span id="span-clr">zufälliges Passwort</span></h1>
+        <h1 id="title-big">
+          Erzeuge ein <span id="span-clr">zufälliges Passwort</span>
+        </h1>
         <h2 id="title-small">Nie wieder unsichere Passwörter!</h2>
       </div>
       <div id="container-generator">
-        <input type="checkbox" id="checkbox-uppercase">
+        <input type="checkbox" id="checkbox-uppercase" />
         <label for="checkbox-uppercase">Großbuchstaben</label>
-        <input type="checkbox" id="checkbox-lowercase">
+        <input type="checkbox" id="checkbox-lowercase" />
         <label for="checkbox-lowercase">Kleinbuchstaben</label>
-        <input type="checkbox" id="checkbox-numbers">
+        <input type="checkbox" id="checkbox-numbers" />
         <label for="checkbox-numbers">Zahlen</label>
-        <input type="checkbox" id="checkbox-characters">
+        <input type="checkbox" id="checkbox-characters" />
         <label for="checkbox-characters">Sonderzeichen</label>
-        <input type="range" id="password-length" min="1" max="25">
-        <label for="password-length">Passwortänge: <span>12</span> Zeichen</label>
+      </div>
+      <div id="container-length">
+        <label for="password-length" id="length-label"
+          >Passwortänge: <span>12</span> Zeichen</label
+        >
+        <input type="range" id="password-length" min="1" max="25" />
+      </div>
+      <div id="container-generate">
         <button id="generate-password" class="btn">Passwort erzeugen</button>
       </div>
-      <hr id="line">
+      <hr id="line" />
       <div id="container-password">
         <button id="copy-password" class="btn">Platzhalter</button>
       </div>
