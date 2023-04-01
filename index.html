@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Passwort Generator</title>
-</head>
-<body>
-  
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Passwort Generator</title>
+  </head>
+  <body>
+    <div id="container-main">
+      <div id="header">
+        <h1>Erzeuge ein <span>zufälliges Passwort</span></h1>
+        <h2>Nie wieder unsichere Passwörter!</h2>
+      </div>
+      <div id="container-generator">
+        <input type="radio" id="radio-uppercase">
+        <label for="radio-uppercase">Großbuchstaben</label>
+        <input type="radio" id="radio-lowercase">
+        <label for="radio-lowercase">Kleinbuchstaben</label>
+        <input type="radio" id="radio-numbers">
+        <label for="radio-numbers">Zahlen</label>
+        <input type="radio" id="radio-characters">
+        <label for="radio-characters">Sonderzeichen</label>
+        <input type="number" id="password-length">
+        <label for="password-length">Passwortlänge</label>
+        <button>Passwort erzeugen</button>
+      </div>
+      <div id="container-password">
+        <button id="generated-password">Platzhalter</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

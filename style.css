@@ -1,3 +1,16 @@
+:root {
+  --clr-primary-100: #F3F4F6;
+  --clr-primary-300: #4ADF86;
+
+  --clr-dark-700: #2F3E53;
+  --clr-dark-800: #1F2937;
+
+  --fs-regular: 500;
+  --fs-semi-bold: 700;
+  --fs-bold: 900;
+}
+
+/* *** *** *** *** *** *** *** *** *** */
 *,
 *::before,
 *::after {
@@ -21,5 +34,4 @@ video {
   display: block;
   max-width: 100%;
 }
-
 /* *** *** *** *** *** *** *** *** *** */
