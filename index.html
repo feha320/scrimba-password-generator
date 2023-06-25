@@ -27,16 +27,16 @@
       </div>
       <div id="container-length">
         <label for="password-length" id="length-label"
-          >Passwortänge: <span>12</span> Zeichen</label
+          >Passwortänge: <span id="length-counter">10</span> Zeichen</label
         >
-        <input type="range" id="password-length" min="1" max="25" />
+        <input type="range" id="password-length" min="1" max="25" value="10" onchange="updateLength(this)" oninput="updateLength(this)"/>
       </div>
       <div id="container-generate">
-        <button id="generate-password" class="btn">Passwort erzeugen</button>
+        <button id="generate-password" class="btn" onclick="generatePassword()">Passwort erzeugen</button>
       </div>
       <hr id="line" />
       <div id="container-password">
-        <button id="copy-password" class="btn">Platzhalter</button>
+        <button id="copy-password" class="btn" onclick="copyPassword()">Platzhalter</button>
       </div>
     </div>
 
