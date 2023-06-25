@@ -24,26 +24,57 @@ function updateLength(input) {
 
 
 // zu viel if ... verbessern?
+// jedes Array 3x hinzugefügt, um z.B. 25-stelliges Passwort aus Zahlen zu ermöglichen
 function generatePassword() {
   passwordArray = [];
+  checkNum = 0;
 
   if (checkBoxUpper.checked) {
-    passwordArray = passwordArray.concat(uppercase);
+    passwordArray = passwordArray.concat(uppercase, uppercase, uppercase);
+    checkNum += 1;
   }
   if (checkBoxLower.checked) {
-    passwordArray = passwordArray.concat(lowercase);
+    passwordArray = passwordArray.concat(lowercase, lowercase, lowercase);
+    checkNum += 1;
   }
   if (checkBoxNumbers.checked) {
-    passwordArray = passwordArray.concat(numbers);
+    passwordArray = passwordArray.concat(numbers, numbers, numbers);
+    checkNum += 1;
   }
   if (checkBoxCharacters.checked) {
-    passwordArray = passwordArray.concat(characters);
+    passwordArray = passwordArray.concat(characters, characters, characters);
+    checkNum += 1;
   }
-  
-  console.log(passwordArray);
+  if (checkNum === 0) {
+    copyPasswordBtn.textContent = "HALT";
+    return;
+  }
+  console.log(checkNum);
   console.log(lengthVal);
+  console.log(passwordArray);
 
+  // Fisher-Yates-Sorting-Algorithm
+  // kopiert/übernommen, nicht selbst erarbeitet
+  const shuffle = (array) => { 
+    for (let i = array.length - 1; i > 0; i--) { 
+      const j = Math.floor(Math.random() * (i + 1)); 
+      [array[i], array[j]] = [array[j], array[i]]; 
+    } 
+    return array; 
+  }; 
 
+  shuffledArray = shuffle(passwordArray);
+
+  console.log(shuffledArray);
+
+  // Passwort kürzen
+  finishedPassword = ""
+  for (let i = 0; i < lengthVal; i++) {
+    finishedPassword += shuffledArray[i];
+    console.log(finishedPassword);
+  }
+
+  copyPasswordBtn.textContent = finishedPassword;
 }
 
 
