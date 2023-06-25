@@ -46,12 +46,9 @@ function generatePassword() {
     checkNum += 1;
   }
   if (checkNum === 0) {
-    copyPasswordBtn.textContent = "HALT";
+    copyPasswordBtn.textContent = "keine Parameter gewählt!";
     return;
   }
-  console.log(checkNum);
-  console.log(lengthVal);
-  console.log(passwordArray);
 
   // Fisher-Yates-Sorting-Algorithm
   // kopiert/übernommen, nicht selbst erarbeitet
@@ -80,5 +77,7 @@ function generatePassword() {
 
 
 function copyPassword() {
-  console.log("kopiert")
+  let pw = copyPasswordBtn.textContent;
+  navigator.clipboard.writeText(pw);
+  alert("Passwort " + pw + " wurde kopiert!");
 }
